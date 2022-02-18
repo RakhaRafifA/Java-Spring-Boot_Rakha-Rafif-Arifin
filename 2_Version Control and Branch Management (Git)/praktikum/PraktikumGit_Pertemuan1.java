@@ -9,5 +9,6 @@ class pertemuan1{
         System.out.println("Isi branch featureB");
 
         System.out.println("Selesai");
+        System.out.println("---------");
     }
 }
