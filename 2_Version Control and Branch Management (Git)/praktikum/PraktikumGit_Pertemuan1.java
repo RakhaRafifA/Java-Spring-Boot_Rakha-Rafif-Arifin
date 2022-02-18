@@ -5,5 +5,6 @@ class pertemuan1{
         System.out.println("Line code yang akan disimpan di stash");
 
         System.out.println("Isi branch development");
+        System.out.println("Isi branch featureA");
     }
 }
