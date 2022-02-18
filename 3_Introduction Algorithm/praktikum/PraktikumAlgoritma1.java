@@ -9,5 +9,12 @@ class Aloritma1{
         System.out.println("Bilangan anda = " + a);
 
         bil.close();
+
+        if(a%2 == 0){
+            System.out.println("Bukan Bilangan Prima");
+        }
+        else{
+            System.out.println("Bilangan Prima");
+        }
     }
 }
