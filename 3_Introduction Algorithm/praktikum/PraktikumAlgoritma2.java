@@ -14,7 +14,7 @@ class Algoritma2{
         }
         else{
             System.out.println("Lampu Mati");
-            
+
         }
     }
 }
