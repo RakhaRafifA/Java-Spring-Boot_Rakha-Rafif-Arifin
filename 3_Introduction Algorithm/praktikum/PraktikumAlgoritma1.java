@@ -1,7 +1,7 @@
 import java.util.*;
 
 class Aloritma1{
-    public static void prima(String[] args) {
+    public static void main(String[] args) {
 
         Scanner bil = new Scanner(System.in);
         System.out.println("Masukan bilangan 1 - 9 = ");
