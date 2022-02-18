@@ -5,5 +5,10 @@ class pertemuan1{
         System.out.println("Line code yang akan disimpan di stash");
 
         System.out.println("Isi branch development");
+<<<<<<< .merge_file_a11452
+        System.out.println("Isi branch featureA");
+=======
+        System.out.println("Isi branch featureB");
+>>>>>>> .merge_file_a11848
     }
 }
