@@ -14,10 +14,10 @@ class Palindrome{
         for(int i = length -1; i >= 0; i--){
             balik = balik + kata.charAt(i);
         }
-        if(kata == balik){
+        if(kata.equals(balik)){
             System.out.println("Palindrome");
         }
-        else if(kata != balik){
+        else{
             System.out.println("Bukan Palindrome");
         }
     }
