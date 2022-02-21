@@ -11,7 +11,7 @@ class Arterisk{
         
         for(int i = 0; i<baris; i++){
             System.out.println(" ");
-            for(int j = 0; j<=baris; j++){
+            for(int j = 0; j<=i; j++){
                 System.out.print("*");
             }
             for(int k = baris - 1; k>1; k--){
