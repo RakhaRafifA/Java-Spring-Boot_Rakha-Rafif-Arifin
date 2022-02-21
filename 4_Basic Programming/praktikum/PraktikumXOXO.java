@@ -10,8 +10,7 @@ class XOXO{
         kata = input.nextLine();
         System.out.println("Anda memasukan kata = " + kata);
         kata = kata.toLowerCase();
-
-        kata.close();
+        input.close();
 
         for (int i = 0; i<kata.length(); i++){
             char ch = kata.charAt(i);
