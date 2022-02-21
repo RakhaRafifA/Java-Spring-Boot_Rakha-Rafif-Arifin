@@ -9,12 +9,12 @@ class Arterisk{
         baris = input.nextInt();
         input.close();
         
-        for(int i = 1; i<baris; i++){
+        for(int i = 0; i<baris; i++){
             System.out.println(" ");
-            for(int j = 1; j<baris; j++){
+            for(int j = 0; j<=baris; j++){
                 System.out.print("*");
             }
-            for(int k = 1; k<i; k++){
+            for(int k = baris - 1; k>1; k--){
                 System.out.print(" ");
             }
         }
