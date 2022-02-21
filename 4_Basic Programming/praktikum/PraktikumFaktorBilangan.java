@@ -10,7 +10,7 @@ class FaktorBilangan{
         System.out.println("Bilangan yang anda cari = " + bilangan);
         bil.close();
 
-        for (int i = 0; i<bilangan; i++){
+        for (int i = 1; i<=bilangan; i++){
             if(bilangan%i == 0){
                 System.out.println(i);
             }
