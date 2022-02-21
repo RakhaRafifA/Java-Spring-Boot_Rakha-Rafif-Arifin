@@ -3,7 +3,7 @@ class VokalKonsonan{
         String line = "Alterra Indonesia";
         int vokal = 0, konsonan = 0, huruf = 0;
 
-        line.line.toLowerCase();
+        line = line.toLowerCase();
         for (int i = 0; i<line.length(); i++){
             char ch = line.charAt(i);
 
