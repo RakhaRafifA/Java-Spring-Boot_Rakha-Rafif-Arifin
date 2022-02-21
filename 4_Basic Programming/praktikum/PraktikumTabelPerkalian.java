@@ -12,9 +12,9 @@ class TabelPerkalian{
         for(int i = 1; i<=bilangan; i++){
             for(int j =1; j<=bilangan; j++){
                 hasil = i*j;
-                System.out.println(" ");
                 System.out.print(hasil + " ");
             }
+            System.out.println(" ");
         }
     }
 }
