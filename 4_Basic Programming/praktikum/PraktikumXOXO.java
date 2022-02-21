@@ -12,7 +12,22 @@ class XOXO{
         kata = kata.toLowerCase();
 
         kata.close();
-        
-        
+
+        for (int i = 0; i<kata.length(); i++){
+            char ch = kata.charAt(i);
+
+            if (ch == 'x'){
+                x++;
+            }
+            else if (ch == 'o'){
+                o++;
+            }
+        }
+        if (x == o){
+            System.out.println("True");
+        }
+        else if (x != o){
+            System.out.println("False");
+        }
     }
 }
