@@ -22,10 +22,14 @@ Flowchart atau pseudocode digunakan untuk menggambarkan algoritma yang bekerja p
 ## **Tugas**
 1. Praktikum algoritma pertama yaitu membuat flowchart untuk membuat sebuah program untuk menentukan apakah bilangan yang diinput merupakan bilangan prima atau bukan, untuk praktikum ini, saya menggunakan website https://whimsical.com
 berikut hasilnya : ![Flowchart Bilangan Prima](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/425713521e2d8c83869e3e5b133bdd217e5207ac/3_Introduction%20Algorithm/screenshots/Problem1%20Bilangan%20Prima_Rakha%20Rafif%20Arifin.png)
+
 berikut source code untuk praktikum yang pertama [PraktikumAlgoritma1.java](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/425713521e2d8c83869e3e5b133bdd217e5207ac/3_Introduction%20Algorithm/praktikum/PraktikumAlgoritma1.java)
+
 berikut screenshot hasil running source code PraktikumAlgoritma1 ![Screenshot PraktikumAlgoritma1](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/425713521e2d8c83869e3e5b133bdd217e5207ac/3_Introduction%20Algorithm/screenshots/test%20running%20bilangan%20prima.PNG)
 
 2. Praktikum algorritma yang kedua yaitu membuat sebuah program untuk menentukan apakah lampu mati atau menyala berdasarkan input dari user berupa N, dan apabila N habis dibagi oleh i maka lampu menyala dan sebaliknya
 berikut flowchart yang telah saya buat ![Flowchart Lampu dan Tombol](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/425713521e2d8c83869e3e5b133bdd217e5207ac/3_Introduction%20Algorithm/screenshots/Problem2%20Lampu%20dan%20Tombol_Rakha%20Rafif%20Arifin.png)
+
 berikut source code untuk praktikum lampu dan tombol [PraktikumAlgoritma2.java](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/425713521e2d8c83869e3e5b133bdd217e5207ac/3_Introduction%20Algorithm/praktikum/PraktikumAlgoritma2.java)
+
 berikut screenshot hasil running source code PraktikumAlgoritma2 ![Screenshot PraktikumAlgoritma2](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/425713521e2d8c83869e3e5b133bdd217e5207ac/3_Introduction%20Algorithm/screenshots/test%20running%20lampu.PNG)
