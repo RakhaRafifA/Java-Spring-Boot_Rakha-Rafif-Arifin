@@ -2,7 +2,8 @@ class AngkaMunculSekali{
     public static void main(String[] args) {
         int arr1[] = {7, 6, 5, 2, 3, 7, 5, 2};
         int arr2[] = {1, 1, 2, 2};
-        SortingAngka(arr1); 
+        SortingAngka(arr1);
+        SortingAngka(arr2);
     }
     static int SortingAngka(int arr[]){
         int hasil = 0;
@@ -10,6 +11,7 @@ class AngkaMunculSekali{
             hasil = hasil ^ arr[i];
         }
         System.out.print(hasil);
+        System.out.println(" ");
         return hasil;
     }
 }
