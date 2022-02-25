@@ -16,11 +16,11 @@ class Prima{
         else if(bilangan >= 4 && bilangan%2 == 0){
             System.out.println("Bukan Bilangan Prima");
         }
-        else if(bilangan >= 4 || bilangan<=13 || bilangan%2 != 0){
+        else if(bilangan >= 4 || bilangan<=17 || bilangan%2 != 0){
             System.out.println("Bilangan Prima");
         }
-        else if(bilangan>13){
-            System.out.println("Bilangan yang anda masukan tidak bisa dicari");
+        else if(bilangan>17){
+            System.out.println("Bukan Bilangan Prima");
         }
     }
 }
