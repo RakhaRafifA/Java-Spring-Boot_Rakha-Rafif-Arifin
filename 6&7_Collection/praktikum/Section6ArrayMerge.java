@@ -1,4 +1,7 @@
 import java.util.Scanner;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 class S6Problem1{
     public static void main(String[] args) {
