@@ -6,14 +6,14 @@ class S6Problem6{
         Scanner input = new Scanner(System.in);
         System.out.println("Masukan Angka yang ingin anda masukan ke dalam array = ");
         angka = input.nextInt();
-        System.out.println("Masukan K = ");
-        int k = input.nextInt();
         String temp = Integer.toString(angka);
         int[] number = new int[temp.length()];
         for(int i = 0; i < temp.length(); i++){
             number[i] = temp.charAt(i) - '0';
         }
         System.out.println(Arrays.toString(number));
+        System.out.println("Masukan K = ");
+        int k = input.nextInt();
         int a = number.length;
         input.close();
         Maxsum(number, a, k);
@@ -32,6 +32,7 @@ class S6Problem6{
             temp = temp + arr[i] - arr[i - k];
             hasil = Math.max(hasil, temp);
         }
+        System.out.println("Hasil Maximum Sum Subarray = " + hasil);
         return hasil;
     }
 }
