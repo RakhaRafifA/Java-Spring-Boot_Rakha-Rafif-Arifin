@@ -1,34 +1,38 @@
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
 class S6Problem2{
     public static void main(String[] args) {
-        String a, b;
+        int angka = 0;
         Scanner input = new Scanner(System.in);
         System.out.println("Masukan Angka yang ingin anda cari = ");
-        a = input.nextLine();
-        char[] angka = a.toCharArray();
-        b = a.length();
+        angka = input.nextInt();
+        String temp = Integer.toString(angka);
+        int[] number = new int[temp.length()];
+        for(int i = 0; i < temp.length(); i++){
+            number[i] = temp.charAt(i) - '0';
+        }
+        System.out.println(Arrays.toString(number));
         input.close();
-
-        Muncul(a, b);
+        MunculSekali(number);
     }
-    static void Muncul(int[] arr, int n) {
-        HashMap<Integer, Integer> insert = new HashMap<>();
-
-        for(int i = 0; i < n; i++){
-            if(insert.containsKey(arr[i])){
-                insert.put(arr[i], 1 + insert.get(arr[i]));
+    static void MunculSekali(int[] arr){
+        HashMap<Integer, Integer> mp = new HashMap<>();
+        int n = arr.length;
+        for (int i = 0; i < n; i++){
+            if (mp.containsKey(arr[i])){
+                 mp.put(arr[i], 1 + mp.get(arr[i]));
             }
             else{
-                insert.put(arr[i], 1);
-            }
-            for(Map.Entry entry : insert.entrySet()){
-                if(Integer.parseInt(String.valueOf(entry.getValue())) == 1){
-                    System.out.println(entry.getKey() + " ");
-                }
+                mp.put(arr[i], 1);
             }
         }
+        for (Map.Entry entry : mp.entrySet()){
+            if (Integer.parseInt(String.valueOf(entry.getValue())) == 1){
+                System.out.print(entry.getKey() + " ");
+            }
+        }     
     }
 }
