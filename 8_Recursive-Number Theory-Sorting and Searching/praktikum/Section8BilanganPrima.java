@@ -11,8 +11,8 @@ class S8Problem1{
     }
     static int primeX(int[] array, int a){
         for(int i = 0; i < array.length; i++){
-            if(a == array[i]){
-                return i + 1;
+            if(a == i){
+                System.out.println(array[i-1]);
             }
         }
         return -1;
