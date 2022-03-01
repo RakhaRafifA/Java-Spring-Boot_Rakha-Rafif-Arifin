@@ -18,7 +18,7 @@ class S8Problem3{
                 indexmax = i;
             }
         }
-        System.out.println("min = " + min + "max = " + max);
+        System.out.println("min = " + min + ", index = " + indexmin + ", max = " + max + ", index = " + indexmax);
         return -1;
     }
 }
