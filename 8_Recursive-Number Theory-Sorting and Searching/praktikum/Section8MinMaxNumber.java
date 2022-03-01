@@ -7,13 +7,15 @@ class S8Problem3{
         
     }
     static int MinMax(int[] arr){
-        int min = arr[0], max = arr[0];
+        int min = arr[0], max = arr[0], indexmin = 0, indexmax = 0;
         for(int i = 0; i < arr.length; i++){
             if(arr[i]<min){
                 min = arr[i];
+                indexmin = i;
             }
             if(arr[i]>max){
                 max = arr[i];
+                indexmax = i;
             }
         }
         System.out.println("min = " + min + "max = " + max);
