@@ -13,25 +13,30 @@ class S9Problem1{
         input.close();
         SimpleE(a, b, c);
     }
-    public static int SimpleE(int A, int B, int C){
-        int x, y, z;
-        for(int i = 0; i < A; i++){
+    public static int[] SimpleE(int A, int B, int C){
+        int x = 0, y = 0, z = 0, max = 0;
+        if(A<max){
+            max = A;
+        }
+        else if(B<max){
+            max = B;
+        }
+        else{
+            max = C;
+        }
+        for(int i = 0; i < max; i++){
             x = i;
-            y = i;
-            z = i;
-            if(x + y + z == A){
-                System.out.println(x + " " + y + " " + z);
-            }
-            else if(x * y * z == B){
-                System.out.println(x + " " + y + " " + z);
-            }
-            else if((x*x) + (y*y) + (z*z) == C){
-                System.out.println(x + " " + y + " " + z);
-            }
-            else{
-                System.out.println(" no result");
+            for(int j = 0; j < max; j++){
+                y = j;
+                for(int k = 0; k < max; k++){
+                    z = k;
+                    if(x + y + z == A && x * y * z == B && (x*x) + (y*y) + (z*z) == C){
+                        System.out.println(x + " " + y + " " + z);
+                    }
+                }
             }
         }
-        return A;
+        int[] result = {x, y, z};
+        return result;
     }
 }
