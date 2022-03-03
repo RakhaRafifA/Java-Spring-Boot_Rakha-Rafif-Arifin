@@ -10,13 +10,13 @@ class S10FibTopDown{
         System.out.println(TopDown(x, fibo));
     }
     static int TopDown(int n, int[] arr){
-            if(n <= 1){
-                return n;
-            }
-            if(arr[n] != 0 ){
-                return arr[n];
-            }
-            arr[n] = TopDown(n - 1, arr) + TopDown(n - 2, arr);
+        if(n <= 1){
+            return n;
+        }
+        if(arr[n] != 0 ){
             return arr[n];
+        }
+        arr[n] = TopDown(n - 1, arr) + TopDown(n - 2, arr);
+        return arr[n];
     }
 }
