@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class S10Problem2{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
