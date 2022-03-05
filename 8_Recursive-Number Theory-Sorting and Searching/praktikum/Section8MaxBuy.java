@@ -19,7 +19,6 @@ class S8MaxBuy{
             if(x>=arr[i]){
                 x -= arr[i];
                 System.out.print(arr[i] + " ");
-                index = i;
             }
         }
         System.out.println(index);
