@@ -1,4 +1,4 @@
-# **(11) Generic & OOP 1
+# **(11 & 12) Generic & OOP
 
 ## **Resume**
 Dalam section ini saya mempelajari bahwa, paradigma programming adalah yang menyediakan properties dan behaviour yang digabungkan menjadi objek individual.
