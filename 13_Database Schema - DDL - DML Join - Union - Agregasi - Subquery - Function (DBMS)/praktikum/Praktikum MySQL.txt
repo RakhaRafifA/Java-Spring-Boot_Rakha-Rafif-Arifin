@@ -1,0 +1,101 @@
+1. Membuat database alta online shop, dengan syntax :
+    - CREATE DATABASE alta_online_shop
+
+2. Gunakan dabatase
+    - USE alta_online_shop;
+
+3. Buat table - table yang dibutuhkan sesuai dengan soal 
+    - CREATE TABLE products(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        product_type_id INT,
+        operator_id INT,
+        code VARCHAR(255),
+        name VARCHAR(255),
+        status SMALLINT,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+    
+    - CREATE TABLE product_description(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        description TEXT,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+    
+    - CREATE TABLE product_type(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+
+    - CREATE TABLE operators(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+
+    - CREATE TABLE payment_methods(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255),
+        status SMALLINT,
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+
+    - CREATE TABLE users(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        status SMALLINT,
+        dob DATE,
+        gender CHAR(1),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP,
+        name VARCHAR(255));
+    
+    - CREATE TABLE transactions(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        user_id INT,
+        payment_method_id INT,
+        status VARCHAR(10),
+        total_qty INT,
+        total_price NUMERIC(25,2),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+
+    - CREATE TABLE transaction_detail(
+        transaction_id INT,
+        product_id INT,
+        status VARCHAR(10),
+        qty INT,
+        price NUMERIC(25,2),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+
+    - CREATE TABLE kurir(
+        id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(255),
+        created_at TIMESTAMP,
+        updated_at TIMESTAMP);
+
+4. Menambahkan kolom baru untuk table kurir
+    - ALTER TABLE kurir
+        ADD ongkos_dasar NUMERIC(25,2);
+
+5. Rename table kurir menjadi shipping
+    - ALTER TABLE kurir RENAME TO shipping;
+
+6. Drop table shipping
+    - DROP TABLE shipping;
+
+7. Membuat relasi antar table
+    - ALTER TABLE products
+        ADD FOREIGN KEY (product_type_id) REFERENCES product_type(id)
+        ADD FOREIGN KEY (operator_id) REFERENCES operators(id)
+
+    - ALTER TABLE transactions
+        ADD FOREIGN KEY (user_id) REFERENCES users(id)
+        ADD FOREIGN KEY (payment_method_id) REFERENCES payment_methods(id)
+
+    - ALTER TABLE transaction_detail
+        ADD FOREIGN KEY (transaction_id) REFERENCES transactions(id)
+        ADD FOREIGN KEY (product_id) REFERENCES products(id)
+
+    - ALTER TABLE product_description
+        ADD FOREIGN KEY (id) REFERENCES products(id)
