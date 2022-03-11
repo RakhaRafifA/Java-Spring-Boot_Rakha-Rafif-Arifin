@@ -25,9 +25,11 @@ RDMS yaitu Relational Database Management Systems, yaitu software yang menggunak
     - SELECT nama_kolom FROM nama_table WHERE nama_kolom LIKE '%h%' OR nama_kolom BERWEEN value AND value ORDER BY value DESC LIMIT value, yaitu syntax untuk memberikan limit/ batasan
 
 ## **Praktikum**
-1. Membuat ERD dengan Draw.io, linknya : [RakhaRafifArifin_Section13_Database](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/06130a13081673d4e101f5f05daa6dbdd3e3a07f/13_Database%20Schema%20-%20DDL%20-%20DML%20Join%20-%20Union%20-%20Agregasi%20-%20Subquery%20-%20Function%20(DBMS)/praktikum/RakhaRafifArifin_Section13_Database.drawio)
+1. Membuat ERD dengan Draw.io, linknya : [RakhaRafifArifin_Section13_Database](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/b8efd36898e52b075f305a7bdf1abf9bf7aa42cb/13_Database%20Schema%20-%20DDL%20-%20DML%20Join%20-%20Union%20-%20Agregasi%20-%20Subquery%20-%20Function%20(DBMS)/praktikum/Praktikum%20MySQL.txt)
 
-Hasil Screenshotnya : ![RakhaRafifArifin_Section13_Database](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/06130a13081673d4e101f5f05daa6dbdd3e3a07f/13_Database%20Schema%20-%20DDL%20-%20DML%20Join%20-%20Union%20-%20Agregasi%20-%20Subquery%20-%20Function%20(DBMS)/screenshots/RakhaRafifArifin_Section13_Database.drawio)
+ERDnya [ERD Database Soal1](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/b8efd36898e52b075f305a7bdf1abf9bf7aa42cb/13_Database%20Schema%20-%20DDL%20-%20DML%20Join%20-%20Union%20-%20Agregasi%20-%20Subquery%20-%20Function%20(DBMS)/praktikum/RakhaRafifArifin_Section13_Database.drawio.png)
+
+Hasil Screenshotnya : ![RakhaRafifArifin_Section13_Database](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/b8efd36898e52b075f305a7bdf1abf9bf7aa42cb/13_Database%20Schema%20-%20DDL%20-%20DML%20Join%20-%20Union%20-%20Agregasi%20-%20Subquery%20-%20Function%20(DBMS)/screenshots/Screenshots%20ERD%20soal%201.PNG)
 
 2. Membuat database sesuai dengan tugas latihan, Hasil Screenshotnya ![RakhaRafifArifin_Section13_Database](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/06130a13081673d4e101f5f05daa6dbdd3e3a07f/13_Database%20Schema%20-%20DDL%20-%20DML%20Join%20-%20Union%20-%20Agregasi%20-%20Subquery%20-%20Function%20(DBMS)/screenshots/Screenshot%201%20(create%20databases%20and%20table).PNG)
 ![RakhaRafifArifin_Section13_Database](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/06130a13081673d4e101f5f05daa6dbdd3e3a07f/13_Database%20Schema%20-%20DDL%20-%20DML%20Join%20-%20Union%20-%20Agregasi%20-%20Subquery%20-%20Function%20(DBMS)/screenshots/Screenshot%202%20(create%20table).PNG)
