@@ -1,0 +1,147 @@
+Membuat database sesuai dengan ERD yang ada di soal, lalu masuk kedalam database yang telah dibuat :
+    - USE alta_online_shop;
+1. Insert
+    a. Insert 5 operators pada table operators :
+        - INSERT INTO operators (name, created_at, updated_at)
+            VALUES ('Rakha','2022-03-10','2022-03-10'),
+            ('Rafif','2022-03-10','2022-03-10'),
+            ('Arifin','2022-03-10','2022-03-10'),
+            ('Hamengkubwono','2022-03-10','2022-03-10'),
+            ('Utwaly','2022-03-10','2022-03-10');
+    
+    b. Insert 3 product type :
+        INSERT INTO product_type (name, created_at, updated_at)
+            VALUES ('Makanan','2022-03-10','2022-03-10'),
+            ('Minuman','2022-03-10','2022-03-10'),
+            ('Perabotan','2022-03-10','2022-03-10');
+    
+    c. Insert 2 product dengan product type id = 1, dan operators id = 3,
+    d. Insert 3 product dengan product type id = 1, dan operators id = 1,
+    e. Insert 3 product dengan product type id = 1, dan operators id = 4 :
+        INSERT INTO products (product_type_id, operator_id, code, name, status, created_at, updated_at)
+            VALUES ('1','3','MK1','Chiki','100','2022-03-10','2022-03-10'),
+            ('1','3','MK2','Coklat','69','2022-03-10','2022-03-10'),
+            ('2','1','MN1','Bajigur','50','2022-03-10','2022-03-10'),
+            ('2','1','MN2','Sekoteng','50','2022-03-10','2022-03-10'),
+            ('2','1','MN3','Wedang','50','2022-03-10','2022-03-10'),
+            ('3','4','PB1','Vacuum Cleaner','10','2022-03-10','2022-03-10'),
+            ('3','4','PB2','Payung','62','2022-03-10','2022-03-10'),
+            ('3','4','PB3','gayung','87','2022-03-10','2022-03-10');
+
+    f. Insert product description untuk semua product :
+        INSERT INTO product_descriptions (description, created_at, updated_at)
+            VALUES ('Makanan ringan harga = Rp 10.000','2022-03-10','2022-03-10'),
+            (Coklat rasa kacang almond harga = Rp 12.000','2022-03-10','2022-03-10'),
+            ('Minuman khas Jawa Barat dengan bahan rempah2, gula merah dan santan harga = Rp 5.000','2022-03-10','2022-03-10'),
+            ('Minuman khas Jawa Barat dengan bahan rempah2, dan jahe harga = Rp 7.000','2022-03-10','2022-03-10'),
+            ('Minuman khas Jawa Barat dengan bahan rempah2 harga = Rp 6.000','2022-03-10','2022-03-10'),
+            ('Alat penyedot debu harga = Rp 50.000','2022-03-10','2022-03-10'),
+            ('Payung, yakali gatau harga = Rp 20.000','2022-03-10','2022-03-10'),
+            ('Gayung, alat untuk mengambil air harga = Rp 10.000','2022-03-10','2022-03-10');
+
+    g. Insert 3 payment methods :
+        INSERT INTO payment_methods (name, status, created_at, updated_at)
+            VALUES ('Debit','001','2022-03-10','2022-03-10'),
+            ('Kredit','001','2022-03-10','2022-03-10'),
+            ('COD','001','2022-03-10','2022-03-10');
+
+    h. Insert 5 user pada table users :
+        INSERT INTO users (status, dob, gender, created_at, updated_at,name)
+            VALUES ('1','2022-03-10','M','2022-03-10','2022-03-10','Rakha'),
+            ('2','2022-03-10','F','2022-03-10','2022-03-10','sengoku'),
+            ('3','2022-03-10','F','2022-03-10','2022-03-10','Garp'),
+            ('4','2022-03-10','M','2022-03-10','2022-03-10','Marco'),
+            ('5','2022-03-10','M','2022-03-10','2022-03-10','Izou');
+
+    i. Insert 3 transaksi di masing - masing user
+        INSERT INTO transactions (status, total_qty, total_price, created_at, updated_at, user_id, payment_method_id)
+            VALUES ('Paid','3','28.000','2022-03-10','2022-03-10','1','3'),
+            ('Paid','1','10.000','2022-03-10','2022-03-10','1','3'),
+            ('Paid','1','20.000','2022-03-10','2022-03-10','1','3'),
+            ('Done','1','10.000','2022-03-10','2022-03-10','2','2'),
+            ('Done','2','11.000','2022-03-10','2022-03-10','2','2'),
+            ('Done','1','50.000','2022-03-10','2022-03-10','2','2'),
+            ('Shipped','1','50.000','2022-03-10','2022-03-10','3','1'),
+            ('Shipped','1','20.000','2022-03-10','2022-03-10','3','1'),
+            ('Shipped','1','10.000','2022-03-10','2022-03-10','3','1'),
+            ('On Process','1','10.000','2022-03-10','2022-03-10','4','2'),
+            ('On Process','1','6.000','2022-03-10','2022-03-10','4','2'),
+            ('On Process','1','7.000','2022-03-10','2022-03-10','4','2'),
+            ('Paid','2','12.000','2022-03-10','2022-03-10','5','1'),
+            ('Paid','1','50.000','2022-03-10','2022-03-10','5','1'),
+            ('Paid','1','20.000','2022-03-10','2022-03-10','5','1');
+
+    j. Insert 3 product di masing - masing transaksi :
+        INSERT INTO transaction_details (status, qty, price, created_at, updated_at, transaction_id, product_id)
+            VALUES ('Paid','3','28.000','2022-03-10','2022-03-10','1','8'),
+            ('Paid','1','10.000','2022-03-10','2022-03-10','2','1'),
+            ('Paid','1','20.000','2022-03-10','2022-03-10','3','7'),
+            ('Done','1','10.000','2022-03-10','2022-03-10','4','8'),
+            ('Done','2','11.000','2022-03-10','2022-03-10','5','5'),
+            ('Done','1','50.000','2022-03-10','2022-03-10','6','6'),
+            ('Shipped','1','50.000','2022-03-10','2022-03-10','7','6'),
+            ('Shipped','1','20.000','2022-03-10','2022-03-10','8','7'),
+            ('Shipped','1','10.000','2022-03-10','2022-03-10','9','8'),
+            ('On Process','1','10.000','2022-03-10','2022-03-10','10','1'),
+            ('On Process','1','6.000','2022-03-10','2022-03-10','11','5'),
+            ('On Process','1','7.000','2022-03-10','2022-03-10','12','4'),
+            ('Paid','2','12.000','2022-03-10','2022-03-10','13','2'),
+            ('Paid','1','50.000','2022-03-10','2022-03-10','14','6'),
+            ('Paid','1','20.000','2022-03-10','2022-03-10','15','7');
+
+2. Select
+    a. Tampilkan nama user/ pelanggan dengan gender laki - laki/ M :
+        SELECT name FROM users WHERE gender = 'M';
+    
+    b. Tampilkan product dengan id = 3 :
+        SELECT * FROM product WHERE id = 3;
+
+    c. Tampilkan data pelanggan yang created_at dalam range 7 hari kebelakang dan mempunyai nama mengandung kata 'a' :
+        SELECT name, created_at FROM users WHERE name LIKE '%a%' AND created_at BETWEEN '2022-03-04' AND '2022-03-11';
+    
+    d. Hitung jumlah user/pelanggan dengan status gender perempuan/F :
+        SELECT COUNT(gender) FROM users WHERE gender = 'F';
+
+    e. Tampilkan data pelanggan dengan urutan sesuai nama abjad :
+        SELECT * FROM users ORDER BY name ASC;
+
+    f. Tampilkan 5 data pada data product :
+        SELECT * FROM products LIMIT 5;
+
+3. Update
+    a. Ubah data product id 1 dengan nama 'product_dummy' :
+        UPDATE products SET name = 'product_dummy' WHERE id = 1;
+
+    b. Update qty = 3 pada transaction_details dengan product id = 1 :
+        UPDATE transaction_details SET qty = '3' WHERE product_id = 1;
+
+4. Delete
+    a. Delete data pada tabel products dengan id 1 :
+        Delete FROM products WHERE id = 1;
+
+    b. Delete data pada tabel products dengan product type id 1 :
+        Delete FROM products WHERE product_type_id = 1;
+
+5. Join, Union, Sub-query, Function
+    a. Gabungkan data transaksi dari user id 1 dan user id 2 :
+        SELECT * FROM transactions WHERE user_id = 1
+        UNION 
+        SELECT * FROM transactions WHERE user_id = 2;
+
+    b. Tampilkan jumlah harga transaksi user id 1 :
+        SELECT SUM(total_price) FROM transactions WHERE user_id = 1;
+
+    c. Tampilkan total transaksi dengan product_type 2 :
+        SELECT SUM(product_id) total_product_id_2 FROM transaction_details WHERE product_id = 2;
+
+    d. Tampilkan semua field table product dan field name table product type yang saling berhubungan :
+        SELECT * FROM products
+        LEFT JOIN product_type
+        ON products.id = product_type.id
+
+    e. Tampilkan semua field table transactions, field name table product dan field name table user :
+        SELECT * FROM transactions
+        JOIN products
+        ON transactions.id = products.id
+        JOIN users
+        ON users.id = products.id;
