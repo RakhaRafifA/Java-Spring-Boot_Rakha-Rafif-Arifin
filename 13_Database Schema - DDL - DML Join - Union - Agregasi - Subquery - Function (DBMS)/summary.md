@@ -1,4 +1,4 @@
-# **14_Database Schema - DDL - DML Join - Union - Agregasi - Subquery - Function (DBMS)**
+# **13_Database Schema - DDL - DML Join - Union - Agregasi - Subquery - Function (DBMS)**
 
 ## Resume
 Pada section ini, saya mempelajari tentang DBMS, khususunya MySQL, Pada section ini kita berfokus pada DBMS khususnya MySQL, berikut beberapa contoh relationship :
