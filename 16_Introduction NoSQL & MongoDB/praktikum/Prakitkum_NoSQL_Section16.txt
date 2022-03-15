@@ -1,0 +1,139 @@
+Praktikum no SQL - MongoDB bagian 1
+
+1. Membuat database yang sesuai dengan ERD yang diberikan dan juga collection - collectionnya
+    - use alterra_online_shop;
+    - db.createCollection('products')
+    - db.createCollection('product_types')
+    - db.createCollection('product_descriptions')
+    - db.createCollection('operators')
+    - db.createCollection('transactions')
+    - db.createCollection('transaction_details')
+    - db.createCollection('payment_methods')
+    - db.createCollection('users')
+
+2. Create
+    a. Insert 5 operators pada table operators
+        - db.operators.insert([
+            {_id:"001" , name:"rakha" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"002" , name:"garp" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"003" , name:"sengoku" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"004" , name:"borsalino" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"005" , name:"kuzan" , created_at:ISODate() , updated_at:ISODate()}
+          ])
+    
+    b. Insert 3 product type
+        - db.product_types.insert([
+            {_id:"1" , name:"Makanan" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"2" , name:"Minuman" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"3" , name:"Perabotan" , created_at:ISODate() , updated_at:ISODate()}
+          ])
+
+    c. Insert 2 product dengan product type id = 1, dan operators id = 3
+    d. Insert 3 product dengan product type id = 2, dan operators id = 1
+    e. Insert 3 product dengan product type id = 3, dan operators id = 4
+        - db.products.insert([
+            {_id:"1" , product_types_id:"1" , operators_id:"003", code:"MK1" , name:"Oreo" , status:"100" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"2" , product_types_id:"1" , operators_id:"003", code:"MK2" , name:"Tango" , status:"155" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"3" , product_types_id:"2" , operators_id:"001", code:"MN1" , name:"Fresh Tea" , status:"300" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"4" , product_types_id:"2" , operators_id:"001", code:"MN2" , name:"Mizone" , status:"420" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"5" , product_types_id:"2" , operators_id:"001", code:"MN3" , name:"Aqua" , status:"499" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"6" , product_types_id:"3" , operators_id:"004", code:"PB1" , name:"Vacuum Cleaner" , status:"50" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"7" , product_types_id:"3" , operators_id:"004", code:"PB2" , name:"Mug" , status:"120" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"8" , product_types_id:"3" , operators_id:"004", code:"PB3" , name:"Bingkai" , status:"88" , created_at:ISODate() , updated_at:ISODate()}
+          ])
+
+    f. Insert product description pada setiap product
+        - db.product_descriptions.insert([
+            {_id:"1" , products_id:"1" , description:"biskuit isi cream vanilla" , harga:"6000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"2" , products_id:"2" , description:"wafer lapis" , harga:"5000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"3" , products_id:"3" , description:"minuman rasa buah" , harga:"4000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"4" , products_id:"4" , description:"minuman isotonik" , harga:"5000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"5" , products_id:"5" , description:"air mineral" , harga:"3000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"6" , products_id:"6" , description:"alat penyedot debu" , harga:"50000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"7" , products_id:"7" , description:"gelas keramik" , harga:"10000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"8" , products_id:"8" , description:"Frame foto" , harga:"20000" , created_at:ISODate() , updated_at:ISODate()}
+          ])
+
+    g. Insert 3 payment methods
+        - db.payment_methods.insert([
+            {_id:"1" , name:"Debit" , status:"001" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"2" , name:"Kredit" , status:"002" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"3" , name:"Tunai" , status:"003" , created_at:ISODate() , updated_at:ISODate()}
+          ])
+
+    h. Insert 5 users pada table users
+        - db.users.insert([
+            {_id:"1" , name:"Roger" , status:"001" , dob:Date() , gender:"M" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"2" , name:"Linlin" , status:"002" , dob:Date() , gender:"F" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"3" , name:"Edward" , status:"003" , dob:Date() , gender:"M" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"4" , name:"Kaidou" , status:"004" , dob:Date() , gender:"M" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"5" , name:"Shanks" , status:"005" , dob:Date() , gender:"M" , created_at:ISODate() , updated_at:ISODate()},
+          ])
+
+    i. Insert 3 transaksi di masing - masing users
+        - db.transactions.insert([
+            {_id:"1" , users_id:"1" , payment_method_id:"1" , status:"paid" , total_qty:"3" , total_price:"18000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"2" , users_id:"1" , payment_method_id:"1" , status:"paid" , total_qty:"3" , total_price:"15000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"3" , users_id:"1" , payment_method_id:"1" , status:"paid" , total_qty:"3" , total_price:"12000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"4" , users_id:"2" , payment_method_id:"2" , status:"Shipped" , total_qty:"3" , total_price:"18000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"5" , users_id:"2" , payment_method_id:"2" , status:"Shipped" , total_qty:"3" , total_price:"30000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"6" , users_id:"2" , payment_method_id:"2" , status:"Shipped" , total_qty:"3" , total_price:"150000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"7" , users_id:"3" , payment_method_id:"3" , status:"On Process" , total_qty:"3" , total_price:"15000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"8" , users_id:"3" , payment_method_id:"3" , status:"On Process" , total_qty:"3" , total_price:"9000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"9" , users_id:"3" , payment_method_id:"3" , status:"On Process" , total_qty:"3" , total_price:"12000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"10" , users_id:"4" , payment_method_id:"2" , status:"Shipped" , total_qty:"3" , total_price:"60000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"11" , users_id:"4" , payment_method_id:"2" , status:"Shipped" , total_qty:"3" , total_price:"150000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"12" , users_id:"4" , payment_method_id:"2" , status:"Shipped" , total_qty:"3" , total_price:"30000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"13" , users_id:"5" , payment_method_id:"3" , status:"Paid" , total_qty:"3" , total_price:"12000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"14" , users_id:"5" , payment_method_id:"3" , status:"Paid" , total_qty:"3" , total_price:"15000" , created_at:ISODate() , updated_at:ISODate()},
+            {_id:"15" , users_id:"5" , payment_method_id:"3" , status:"Paid" , total_qty:"3" , total_price:"9000" , created_at:ISODate() , updated_at:ISODate()}
+          ])
+
+    j. Insert 3 product di masing - masing transaksi
+        - db.transaction_details.insert([
+            {transactions_id:"1" , products_id:"1" , status:"paid" , qty:"3" , price:"6000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"1" , products_id:"2" , status:"paid" , qty:"3" , price:"5000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"1" , products_id:"3" , status:"paid" , qty:"3" , price:"4000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"2" , products_id:"1" , status:"Shipped" , qty:"3" , price:"6000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"2" , products_id:"7" , status:"Shipped" , qty:"3" , price:"10000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"2" , products_id:"6" , status:"Shipped" , qty:"3" , price:"50000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"3" , products_id:"2" , status:"On Process" , qty:"3" , price:"5000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"3" , products_id:"5" , status:"On Process" , qty:"3" , price:"3000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"3" , products_id:"3" , status:"On Process" , qty:"3" , price:"4000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"4" , products_id:"8" , status:"Shipped" , qty:"3" , price:"20000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"4" , products_id:"6" , status:"Shipped" , qty:"3" , price:"50000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"4" , products_id:"7" , status:"Shipped" , qty:"3" , price:"10000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"5" , products_id:"3" , status:"Paid" , qty:"3" , price:"4000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"5" , products_id:"4" , status:"Paid" , qty:"3" , price:"5000" , created_at:ISODate() , updated_at:ISODate()},
+            {transactions_id:"5" , products_id:"5" , status:"Paid" , qty:"3" , price:"3000" , created_at:ISODate() , updated_at:ISODate()}
+          ])
+
+3. Read
+    a. Tampilkan nama user / pelanggan dengan gender laki - laki / M
+        - db.users.find({gender:"M"});
+    
+    b. Tampilkan product dengan id = 3
+        - db.products.find({_id:"3"});
+
+    c. Hitung jumlah user / pelanggan dengan status gender perempuan / F
+        - db.users.find({gender:"F"}).count();
+
+    d. Tampilkan data pelanggan dengan urutan sesuai nama abjad
+        - db.users.find().sort({name: 1});
+
+    e. Tampilkan 5 data product
+        - db.products.find().limit(5);
+
+3. Update
+    a. Ubah data product id 1 dengan nama "product dummy"
+        - db.products.update({_id:"1"} , {$set:{name:"product dummy"}});
+
+    b. Ubah qty = 3 pada transaction details dengan product id 1
+        - db.transaction_details.update({products_id:"1"} , {$set: {qty:"4"}});
+
+4. Delete
+    a. Delete pada table product dengan id 1
+        - db.products.remove({_id:"1"});
+    
+    b. Delete pada table product dengan product type id 1
+        - db.products.remove({product_types_id:"1"});
