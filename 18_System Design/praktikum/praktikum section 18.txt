@@ -1,0 +1,15 @@
+Problem 2 - Query
+
+Terdapat sebuah query dalam format SQL yaitu :
+SELECT * FROM users;
+
+dengan tujuan yang sama, tuliskan dalam bentuk perintah :
+1. Redis
+    - HGETALL users;
+
+2. Neo4J
+    - MATCH (u:users)
+    - RETURN u;
+
+3. Cassandra
+    - SELECT * FROM users;
