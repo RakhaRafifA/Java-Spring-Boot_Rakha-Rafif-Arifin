@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Section21Application<section21>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.rakharafifa.section21.Section21Application",
+            "projectName": "section21",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
