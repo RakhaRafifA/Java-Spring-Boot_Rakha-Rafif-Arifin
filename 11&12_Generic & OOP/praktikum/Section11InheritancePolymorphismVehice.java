@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/* import java.util.Scanner;
 
 
 class Vehicle{
@@ -68,3 +68,4 @@ public class Section11InheritancePolymorphismVehice {
         input.close();
     }
 }
+*/
