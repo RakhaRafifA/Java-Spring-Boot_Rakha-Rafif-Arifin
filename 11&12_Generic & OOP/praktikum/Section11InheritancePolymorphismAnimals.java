@@ -1,4 +1,4 @@
-class Animals{
+/* class Animals{
     String nama = "Binatang";
     String makanan;
     String gigi;
@@ -55,3 +55,4 @@ public class Section11InheritancePolymorphismAnimals {
         om.identify_myself();
     }
 }
+*/

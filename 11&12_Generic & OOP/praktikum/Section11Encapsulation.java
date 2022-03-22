@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/* import java.util.Scanner;
 
 public class Section11Encapsulation{
     public static void main(String[] args) {
@@ -140,3 +140,4 @@ class Car{
         return num_of_tire = value;
     }
 }
+*/
