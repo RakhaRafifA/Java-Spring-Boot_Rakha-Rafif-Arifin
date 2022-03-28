@@ -1,50 +1,52 @@
 package com.rakharafifa.section24.service;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
-import java.util.Optional;
 
 import com.rakharafifa.section24.model.Product;
 import com.rakharafifa.section24.repository.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Service
 public class ProductServiceImpl implements ProductService {
+    ProductRepository productRepository;
+
     @Autowired
-    private ProductRepository productRepository;
+    public ProductServiceImpl(ProductRepository productRepository){
+        this.productRepository = productRepository;
+    }
 
     @Override
     public List<Product> getAllProduct(){
-        return (List<Product>) productRepository.findAll();
+        List<Product> products = new ArrayList<>();
+        productRepository.findAll().forEach(products::add);
+        return products;
     }
 
     @Override
     public Product getProduct(Long id){
-        return productRepository.findById(id).orElse(null);
+        return productRepository.findById(id).get();
     }
 
     @Override
-    public Product postProduct(Product barang){
-        return productRepository.save(barang);
+    public Product postProduct(Product product){
+        return productRepository.save(product);
     }
 
     @Override
-    public void deleteProduct(Long id){
-        productRepository.deleteById(id);
+    public void putProduct(Long id, Product product){
+        Product products = productRepository.findById(id).get();
+        System.out.println(products.toString());
+        products.setName(product.getName());
+        products.setPrice(product.getPrice());
+        productRepository.save(products);
     }
 
     @Override
-    public Optional<Product> putProduct(@PathVariable Long id, @RequestBody Product barang){
-        Optional<Product> productById = productRepository.findById(id);
-        productById.ifPresent(res ->{
-            res.setName(barang.getName());
-            res.setPrice(barang.getPrice());
-        });
-        return productById;
+    public void deleteProduct(Long product_id){
+        productRepository.deleteById(product_id);
     }
 }

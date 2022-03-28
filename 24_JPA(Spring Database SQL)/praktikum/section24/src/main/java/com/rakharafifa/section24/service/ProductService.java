@@ -5,9 +5,10 @@ import java.util.List;
 import com.rakharafifa.section24.model.Product;
 
 public interface ProductService {
+
     List<Product> getAllProduct();
     Product getProduct(Long id);
-    Product postProduct(Product barang);
+    Product postProduct(Product id);
     void deleteProduct(Long id);
-    Product putProduct(Long id, Product barang);
+    void putProduct(Long id, Product product);
 }
