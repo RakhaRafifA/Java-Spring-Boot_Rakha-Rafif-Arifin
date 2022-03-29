@@ -21,12 +21,19 @@ import lombok.Setter;
 @Builder
 public class Stock {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    private Long product_id;
     private Long quantity;
     
     public Long getQuantity() {
         return quantity;
+    }
+    public Long getProduct_id() {
+        return product_id;
+    }
+    public void setProduct_id(Long product_id) {
+        this.product_id = product_id;
     }
     public void setQuantity(Long quantity) {
         this.quantity = quantity;

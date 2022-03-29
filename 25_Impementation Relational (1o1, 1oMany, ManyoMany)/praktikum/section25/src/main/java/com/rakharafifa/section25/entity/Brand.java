@@ -1,6 +1,5 @@
 package com.rakharafifa.section25.entity;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,9 +21,10 @@ import lombok.Setter;
 @Setter
 public class Brand {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long brand_id;
     private String brand_name;
+
     public String getBrand_name() {
         return brand_name;
     }

@@ -21,13 +21,28 @@ import lombok.Setter;
 @Setter
 public class Product {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long product_id;
     private String product_name;
     private Long model_year;
     private Long list_price;
+    private Long brand_id;
+    private Long category_id;
+
     public String getProduct_name() {
         return product_name;
+    }
+    public Long getCategory_id() {
+        return category_id;
+    }
+    public void setCategory_id(Long category_id) {
+        this.category_id = category_id;
+    }
+    public Long getBrand_id() {
+        return brand_id;
+    }
+    public void setBrand_id(Long brand_id) {
+        this.brand_id = brand_id;
     }
     public Long getList_price() {
         return list_price;

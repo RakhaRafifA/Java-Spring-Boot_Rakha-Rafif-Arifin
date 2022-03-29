@@ -50,7 +50,7 @@ public class BrandController {
         return new ResponseEntity<>(brandService.getBrandById(brand_id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/Brand/{Brand_id}")
+    @DeleteMapping("/brand/{brand_id}")
     public ResponseEntity<Brand> deleteBrand(@PathVariable("brand_id") Long brand_id) {
         brandService.deleteBrand(brand_id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

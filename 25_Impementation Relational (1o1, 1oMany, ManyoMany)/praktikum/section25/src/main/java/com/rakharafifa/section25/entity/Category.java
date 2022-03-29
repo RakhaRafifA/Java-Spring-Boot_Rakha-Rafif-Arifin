@@ -1,6 +1,5 @@
 package com.rakharafifa.section25.entity;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,10 +21,10 @@ import lombok.Setter;
 @Setter
 public class Category {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long category_id;
     private String category_name;
-    
+
     public String getCategory_name() {
         return category_name;
     }

@@ -39,6 +39,7 @@ public class StockServiceImpl implements StockService {
     public void updateStock(Long stock_id, Stock stock){
         Stock stocks = stockRepository.findById(stock_id).get();
         System.out.println(stocks.toString());
+        stock.setProduct_id(stock.getProduct_id());
         stocks.setQuantity(stock.getQuantity());
         stockRepository.save(stocks);
     }
