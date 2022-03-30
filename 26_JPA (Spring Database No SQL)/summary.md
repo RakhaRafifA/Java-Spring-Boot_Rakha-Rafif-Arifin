@@ -45,21 +45,21 @@ Pada section kali ini, kita mempelajari tentang spring boot menggunakan databse 
 
 ## **Praktikum**
 Buatlah Project spring boot dengan database MongoDB dan struktur MVC yang dapat melakukan CRUD data berikut :
-    - Product :
-        - id
-        - name
-        - price
-    - Transaction :
-        - id
-        - customer_name
-        - transaction_details
-        - is_paid
-        - created_at
-    - TransactionDetail
-        - id
-        - transaction_id
-        - product_id
-        - quantity
+1. Product :
+    - id
+    - name
+    - price
+2. Transaction :
+    - id
+    - customer_name
+    - transaction_details
+    - is_paid
+    - created_at
+3. TransactionDetail
+    - id
+    - transaction_id
+    - product_id
+    - quantity
 
 untuk source codenya dapat dilihat di [praktikum section 26](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/tree/main/26_JPA%20(Spring%20Database%20No%20SQL)/praktikum/section25)
 
