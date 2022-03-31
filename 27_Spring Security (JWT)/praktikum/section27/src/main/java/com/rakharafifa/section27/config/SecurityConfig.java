@@ -14,13 +14,13 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
 import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
     private final UserDetailsService userDetailsService;
     private final SecurityFilter securityFilter;
 
@@ -31,20 +31,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)
-    throws Exception{
-        auth.userDetailsService(userDetailsService);
+    throws Exception {
+        auth.userDetailsService(userDetailsService)
+        .passwordEncoder(passwordEncoder());
     }
 
     @Bean
     @Override
     protected AuthenticationManager authenticationManager()
-    throws Exception{
+    throws Exception {
         return super.authenticationManager();
     }
 
     @Override
-    protected void configure(HttpSecurity http)
-    throws Exception{
+    protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
             .authorizeRequests()
             .antMatchers("/auth/**").permitAll()

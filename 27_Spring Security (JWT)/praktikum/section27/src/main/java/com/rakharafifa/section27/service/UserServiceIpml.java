@@ -11,14 +11,16 @@ import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService {
-    private final UserRepository userRepository;
+public class UserServiceIpml implements UserService {
 
+    private final UserRepository userRepository;
+    
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = userRepository.getDistinctTopByUsername(username);
         if (user == null)
-            throw new UsernameNotFoundException("Phone Not Found");
+        throw new UsernameNotFoundException("Username not Found");
         return user;
     }
+    
 }

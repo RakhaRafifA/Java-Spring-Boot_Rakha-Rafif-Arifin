@@ -18,12 +18,12 @@ public class UserConfig {
             .roles("ADMIN")
             .build();
 
-        UserDetails user = User.builder()
+            UserDetails user = User.builder()
             .username("user")
-            .password("{bcrypt}$2a$12$ZmOh7rJEuh7WkPW4mfhfleQHBEEX5P/0Ba4emn6DFuH21CJ9xK0Fy")
+            .password("{bcrypt}$2a$10$5j21h7ZPIlEw1va2gsDitu9x4wRN2g5TRFjjg2Gndxz11scvQHXN6")
             .roles("USER")
             .build();
-        
+
         return new InMemoryUserDetailsManager(admin, user);
     }
 }

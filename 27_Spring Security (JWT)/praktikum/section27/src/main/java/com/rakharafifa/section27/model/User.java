@@ -16,18 +16,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User implements UserDetails {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long phone;
     private String username;
     private String password;
     private String role;
-    @Column(columnDefinition = "boolean default = true")
+    @Column(columnDefinition = "boolean default true")
     private boolean active = true;
-
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -35,18 +35,22 @@ public class User implements UserDetails {
 
     @Override
     public boolean isAccountNonExpired() {
-        return active;
+        return this.active;
     }
+
     @Override
     public boolean isAccountNonLocked() {
-        return active;
+        return this.active;
     }
+
     @Override
     public boolean isCredentialsNonExpired() {
-        return active;
+        return this.active;
     }
+
     @Override
     public boolean isEnabled() {
-        return active;
+        return this.active;
     }
+    
 }

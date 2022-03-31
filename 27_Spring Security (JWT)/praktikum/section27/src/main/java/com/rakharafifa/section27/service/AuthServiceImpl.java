@@ -1,11 +1,10 @@
 package com.rakharafifa.section27.service;
 
-
 import com.rakharafifa.section27.model.User;
 import com.rakharafifa.section27.model.payload.TokenResponse;
 import com.rakharafifa.section27.model.payload.UsernamePassword;
 import com.rakharafifa.section27.repository.UserRepository;
-import com.rakharafifa.section27.security.JWTTokenProvider;
+import com.rakharafifa.section27.security.JwtTokenProvider;
 
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -23,15 +22,15 @@ import lombok.extern.log4j.Log4j2;
 @RequiredArgsConstructor
 public class AuthServiceImpl implements AuthService {
     
-    private final AuthenticationManager authenticationManager;
     private final UserRepository userRepository;
-    private final JWTTokenProvider jwtTokenProvider;
+    private final AuthenticationManager authenticationManager;
+    private final JwtTokenProvider jwtTokenProvider;
     private final PasswordEncoder passwordEncoder;
 
     @Override
     public User register(UsernamePassword req) {
         User user = new User();
-        user.setPhone(req.getPhone());
+        user.setUsername(req.getUsername());
         user.setPassword(passwordEncoder.encode(req.getPassword()));
         return userRepository.save(user);
     }
@@ -40,7 +39,7 @@ public class AuthServiceImpl implements AuthService {
         try {
             Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                    req.getPhone(), 
+                    req.getUsername(), 
                     req.getPassword())
             );
             SecurityContextHolder.getContext().setAuthentication(authentication);
@@ -49,11 +48,12 @@ public class AuthServiceImpl implements AuthService {
             tokenResponse.setToken(jwt);
             return tokenResponse;
         } catch (BadCredentialsException e) {
-            log.error("Bad Credential", e);
+            log.error("Bad Credential" ,e);
             throw new RuntimeException(e.getMessage(), e);
-        } catch (Exception e) {
+        } catch (Exception e){
             log.error(e.getMessage(), e);
             throw new RuntimeException(e.getMessage(), e);
         }
     }
+
 }
