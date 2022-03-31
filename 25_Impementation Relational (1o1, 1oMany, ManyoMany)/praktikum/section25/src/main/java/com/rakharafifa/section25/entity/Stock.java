@@ -4,38 +4,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Data
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Setter
-@Getter
-@Builder
+@Table(name = "stock")
 public class Stock {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private Long product_id;
     private Long quantity;
-    
-    public Long getQuantity() {
-        return quantity;
-    }
-    public Long getProduct_id() {
-        return product_id;
-    }
-    public void setProduct_id(Long product_id) {
-        this.product_id = product_id;
-    }
-    public void setQuantity(Long quantity) {
-        this.quantity = quantity;
-    }
+
+    //@ManyToOne
+    //@JoinColumn(name = "product_id", nullable = false)
+    //private Product product;
 }

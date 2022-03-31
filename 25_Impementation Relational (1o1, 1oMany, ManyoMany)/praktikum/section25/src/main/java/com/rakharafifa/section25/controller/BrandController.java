@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rakhara")
+@RequestMapping("/rakhara/brand")
 public class BrandController {
     BrandService brandService;
 
@@ -27,30 +27,30 @@ public class BrandController {
         this.brandService = brandService;
     }
 
-    @GetMapping("/brand")
+    @GetMapping
     public ResponseEntity<List<Brand>> getAllBrands(){
         List<Brand> brands = brandService.getAllBrand();
         return new ResponseEntity<>(brands, HttpStatus.OK);
     }
 
-    @GetMapping("/brand/{brand_id}")
+    @GetMapping("/{brand_id}")
     public ResponseEntity<Brand> getBrand(@PathVariable Long brand_id){
         return new ResponseEntity<>(brandService.getBrandById(brand_id), HttpStatus.OK);
     }
 
-    @PostMapping("/brand")
+    @PostMapping
     public ResponseEntity<Brand> saveBrand(@RequestBody Brand brand){
         Brand brand2 = brandService.postBrand(brand);
         return new ResponseEntity<>(brand2, HttpStatus.CREATED);
     }
 
-    @PutMapping("/brand/{brand_id}")
+    @PutMapping("/{brand_id}")
     public ResponseEntity<Brand> updateBrand(@PathVariable("brand_id") Long brand_id,@RequestBody Brand brand){
         brandService.updateBrand(brand_id, brand);
         return new ResponseEntity<>(brandService.getBrandById(brand_id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/brand/{brand_id}")
+    @DeleteMapping("/{brand_id}")
     public ResponseEntity<Brand> deleteBrand(@PathVariable("brand_id") Long brand_id) {
         brandService.deleteBrand(brand_id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

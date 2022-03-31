@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/rakhara")
+@RequestMapping("/rakhara/product")
 public class ProductController {
     ProductService productService;
 
@@ -28,30 +28,30 @@ public class ProductController {
         this.productService = productService;
     }
 
-    @GetMapping("/product")
+    @GetMapping
     public ResponseEntity<List<Product>> getAllProducts(){
         List<Product> products = productService.getAllProduct();
         return new ResponseEntity<>(products, HttpStatus.OK);
     }
 
-    @GetMapping("/product/{product_id}")
+    @GetMapping("/{product_id}")
     public ResponseEntity<Product> getProduct(@PathVariable Long product_id){
         return new ResponseEntity<>(productService.getProductById(product_id), HttpStatus.OK);
     }
 
-    @PostMapping("/product")
+    @PostMapping
     public ResponseEntity<Product> saveProduct(@RequestBody Product product){
         Product product2 = productService.postProduct(product);
         return new ResponseEntity<>(product2, HttpStatus.CREATED);
     }
 
-    @PutMapping("/product/{product_id}")
+    @PutMapping("/{product_id}")
     public ResponseEntity<Product> updateProduct(@PathVariable("product_id") Long product_id,@RequestBody Product product){
         productService.updateProduct(product_id, product);
         return new ResponseEntity<>(productService.getProductById(product_id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/product/{product_id}")
+    @DeleteMapping("/{product_id}")
     public ResponseEntity<Product> deleteProduct(@PathVariable("product_id") Long product_id) {
         productService.deleteProduct(product_id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);

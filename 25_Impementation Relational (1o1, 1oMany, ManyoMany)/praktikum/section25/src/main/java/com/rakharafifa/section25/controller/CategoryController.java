@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/rakhara")
+@RequestMapping("/rakhara/category")
 public class CategoryController {
     CategoryService categoryService;
 
@@ -27,30 +27,30 @@ public class CategoryController {
         this.categoryService = categoryService;
     }
 
-    @GetMapping("/category")
+    @GetMapping
     public ResponseEntity<List<Category>> getAllCategorys(){
         List<Category> categorys = categoryService.getAllCategory();
         return new ResponseEntity<>(categorys, HttpStatus.OK);
     }
 
-    @GetMapping("/category/{category_id}")
+    @GetMapping("/{category_id}")
     public ResponseEntity<Category> getCategory(@PathVariable Long category_id){
         return new ResponseEntity<>(categoryService.getCategoryById(category_id), HttpStatus.OK);
     }
 
-    @PostMapping("/category")
+    @PostMapping
     public ResponseEntity<Category> saveCategory(@RequestBody Category category){
         Category category2 = categoryService.postCategory(category);
         return new ResponseEntity<>(category2, HttpStatus.CREATED);
     }
 
-    @PutMapping("/category/{category_id}")
+    @PutMapping("/{category_id}")
     public ResponseEntity<Category> updateCategory(@PathVariable("category_id") Long category_id,@RequestBody Category category){
         categoryService.updateCategory(category_id, category);
         return new ResponseEntity<>(categoryService.getCategoryById(category_id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/category/{category_id}")
+    @DeleteMapping("/{category_id}")
     public ResponseEntity<Category> deleteCategory(@PathVariable("category_id") Long category_id) {
         categoryService.deleteCategory(category_id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
