@@ -1,6 +1,6 @@
-package com.rakharafifa.section27.config;
+package com.rakharafifa.sect27.config;
 
-import com.rakharafifa.section27.security.SecurityFilter;
+import com.rakharafifa.sect27.security.SecurityFilter;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,13 +14,14 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
 import lombok.RequiredArgsConstructor;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-
+    
     private final UserDetailsService userDetailsService;
     private final SecurityFilter securityFilter;
 
@@ -31,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth)
-    throws Exception {
+    throws Exception{
         auth.userDetailsService(userDetailsService)
         .passwordEncoder(passwordEncoder());
     }
@@ -39,12 +40,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     @Override
     protected AuthenticationManager authenticationManager()
-    throws Exception {
+    throws Exception{
         return super.authenticationManager();
     }
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http)
+    throws Exception{
         http.csrf().disable()
             .authorizeRequests()
             .antMatchers("/v2/auth/**").permitAll()

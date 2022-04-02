@@ -1,23 +1,23 @@
-package com.rakharafifa.section27.security;
+package com.rakharafifa.sect27.security;
 
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.rakharafifa.section27.model.User;
+import com.rakharafifa.sect27.model.User;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.UnsupportedJwtException;
+import io.jsonwebtoken.security.SignatureException;
+import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.MalformedJwtException;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.UnsupportedJwtException;
-import io.jsonwebtoken.security.Keys;
-import io.jsonwebtoken.security.SignatureException;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2
@@ -34,11 +34,11 @@ public class JwtTokenProvider {
         Date expiryDate = new Date(now.getTime() + expiration);
 
         Map<String, Object> claims = new HashMap<>();
-        claims.put("phone", user.getUsername());
+        claims.put("phone", user.getPhone());
 
         return Jwts.builder()
             .setId(user.getId().toString())
-            .setSubject(user.getUsername())
+            .setSubject(user.getPhone())
             .setClaims(claims)
             .setIssuedAt(now)
             .setExpiration(expiryDate)
@@ -64,7 +64,7 @@ public class JwtTokenProvider {
         return false;
     }
 
-    public String getUsername(String token){
+    public String getPhone(String token){
         Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
         return claims.get("phone").toString();
     }

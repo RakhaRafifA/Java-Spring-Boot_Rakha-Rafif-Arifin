@@ -1,4 +1,4 @@
-package com.rakharafifa.section27.model;
+package com.rakharafifa.sect27.model;
 
 import java.util.Collection;
 
@@ -18,17 +18,17 @@ import lombok.Data;
 @Entity
 @Table(name = "users")
 public class User implements UserDetails {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "phone")
+    private String phone;
     private String username;
     private String password;
     private String role;
     @Column(columnDefinition = "boolean default true")
     private boolean active = true;
-    
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
@@ -43,15 +43,12 @@ public class User implements UserDetails {
     public boolean isAccountNonLocked() {
         return this.active;
     }
-
     @Override
     public boolean isCredentialsNonExpired() {
         return this.active;
     }
-
     @Override
     public boolean isEnabled() {
         return this.active;
     }
-    
 }

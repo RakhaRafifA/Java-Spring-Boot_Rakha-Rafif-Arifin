@@ -1,4 +1,4 @@
-package com.rakharafifa.section27.security;
+package com.rakharafifa.sect27.security;
 
 import java.io.IOException;
 
@@ -28,24 +28,24 @@ public class SecurityFilter extends OncePerRequestFilter {
 
     private final UserDetailsService userDetailsService;
     private final JwtTokenProvider jwtTokenProvider;
-    
+
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         try {
             String token = getJWTFromRequest(request);
             if (token != null && !token.isBlank() && jwtTokenProvider.validateToken(token)){
-                String username = jwtTokenProvider.getUsername(token);
-                log.info("phone {}", username);
-                UserDetails user = userDetailsService.loadUserByUsername(username);
+                String phone = jwtTokenProvider.getPhone(token);
+                log.info("phone {} : ", phone);
+                UserDetails user = userDetailsService.loadUserByUsername(phone);
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                     user, user.getPassword(), user.getAuthorities());
-                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
         } catch (Exception e) {
             log.error(e.getMessage(), e);
-        }
+        } 
         filterChain.doFilter(request, response);
     }
 

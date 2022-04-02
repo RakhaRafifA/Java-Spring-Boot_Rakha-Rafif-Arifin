@@ -1,9 +1,8 @@
-package com.rakharafifa.section27.controller;
+package com.rakharafifa.sect27.controller;
 
-
-import com.rakharafifa.section27.model.payload.TokenResponse;
-import com.rakharafifa.section27.model.payload.UsernamePassword;
-import com.rakharafifa.section27.service.AuthService;
+import com.rakharafifa.sect27.model.PhonePassword;
+import com.rakharafifa.sect27.model.TokenResponse;
+import com.rakharafifa.sect27.service.AuthService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,21 +13,21 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/v2/auth")
+@RequestMapping("v2/auth")
 @RequiredArgsConstructor
 public class AuthController {
     
     private final AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody UsernamePassword usernamePassword){
-        authService.register(usernamePassword);
+    public ResponseEntity<?> register(@RequestBody PhonePassword phonePassword){
+        authService.register(phonePassword);
         return ResponseEntity.noContent().build();
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> getToken(@RequestBody UsernamePassword usernamePassword){
-        TokenResponse token = authService.generateToken(usernamePassword);
+    public ResponseEntity<?> login(@RequestBody PhonePassword phonePassword){
+        TokenResponse token = authService.generateToken(phonePassword);
         return ResponseEntity.ok(token);
     }
 }
