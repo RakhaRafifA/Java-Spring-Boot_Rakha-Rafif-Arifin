@@ -33,9 +33,9 @@ public class BrandController {
         return new ResponseEntity<>(brands, HttpStatus.OK);
     }
 
-    @GetMapping("/{brand_id}")
-    public ResponseEntity<Brand> getBrand(@PathVariable Long brand_id){
-        return new ResponseEntity<>(brandService.getBrandById(brand_id), HttpStatus.OK);
+    @GetMapping("/{id}")
+    public ResponseEntity<Brand> getBrand(@PathVariable("id") Long id){
+        return new ResponseEntity<>(brandService.getBrandById(id), HttpStatus.OK);
     }
 
     @PostMapping
@@ -44,15 +44,15 @@ public class BrandController {
         return new ResponseEntity<>(brand2, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{brand_id}")
-    public ResponseEntity<Brand> updateBrand(@PathVariable("brand_id") Long brand_id,@RequestBody Brand brand){
-        brandService.updateBrand(brand_id, brand);
-        return new ResponseEntity<>(brandService.getBrandById(brand_id), HttpStatus.OK);
+    @PutMapping("/{id}")
+    public ResponseEntity<Brand> updateBrand(@PathVariable("id") Long id,@RequestBody Brand brand){
+        brandService.updateBrand(id, brand);
+        return new ResponseEntity<>(brandService.getBrandById(id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{brand_id}")
-    public ResponseEntity<Brand> deleteBrand(@PathVariable("brand_id") Long brand_id) {
-        brandService.deleteBrand(brand_id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Brand> deleteBrand(@PathVariable("id") Long id) {
+        brandService.deleteBrand(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

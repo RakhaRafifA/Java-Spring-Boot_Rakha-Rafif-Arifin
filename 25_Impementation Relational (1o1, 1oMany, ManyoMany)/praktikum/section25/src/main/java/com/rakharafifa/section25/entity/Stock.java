@@ -19,11 +19,11 @@ import lombok.NoArgsConstructor;
 @Table(name = "stock")
 public class Stock {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long quantity;
 
-    //@ManyToOne
-    //@JoinColumn(name = "product_id", nullable = false)
-    //private Product product;
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 }
