@@ -52,9 +52,16 @@ Buatlah rancangan dalam bentuk diagram yang menampilkan :
 3. terdapat service yang melakukan shared database
 4. terdapat service yang melakukan database per service
 
-![Problem1]()
+![Problem1](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/09e98b0f07ebd4bcbfb887b83242eb0749058f9e/32_Introduction%20Microservices%20and%20Spring%20Cloud/praktikum/MicroserviceRakhaProblem1.jpg)
 
 Problem 2 - Services Communication
 Dari rancangan Microservice diatas : 
 1. buatlah rancangan jika antara service berkomunikasi menggunakan RPC
+![Problem2 RPC](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/09e98b0f07ebd4bcbfb887b83242eb0749058f9e/32_Introduction%20Microservices%20and%20Spring%20Cloud/praktikum/MicroserviceRakhaProblem2%20-%20RPC.jpg)
+
+
 2. buatlah rancangan jika antara service berkomunikasi menggunakan Messaging
+![Problem2 Messaging](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/09e98b0f07ebd4bcbfb887b83242eb0749058f9e/32_Introduction%20Microservices%20and%20Spring%20Cloud/praktikum/MicroserviceRakhaProblem2%20-%20Message%20Broker.jpg)
+
+Screenshotnya :
+![Problem2 Messaging](https://github.com/RakhaRafifA/Java-Spring-Boot_Rakha-Rafif-Arifin/blob/09e98b0f07ebd4bcbfb887b83242eb0749058f9e/32_Introduction%20Microservices%20and%20Spring%20Cloud/screenshot/Screenshot1%20-%20Drawio.PNG)
