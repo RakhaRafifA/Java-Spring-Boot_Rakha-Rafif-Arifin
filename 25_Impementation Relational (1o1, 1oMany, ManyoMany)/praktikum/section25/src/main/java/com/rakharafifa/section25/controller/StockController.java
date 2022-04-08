@@ -33,9 +33,9 @@ public class StockController {
         return new ResponseEntity<>(stocks, HttpStatus.OK);
     }
 
-    @GetMapping("/{stock_id}")
-    public ResponseEntity<Stock> getStock(@PathVariable Long stock_id){
-        return new ResponseEntity<>(stockService.getStockById(stock_id), HttpStatus.OK);
+    @GetMapping("/{id}")
+    public ResponseEntity<Stock> getStock(@PathVariable("id") Long id){
+        return new ResponseEntity<>(stockService.getStockById(id), HttpStatus.OK);
     }
 
     @PostMapping
@@ -44,15 +44,15 @@ public class StockController {
         return new ResponseEntity<>(stock2, HttpStatus.CREATED);
     }
 
-    @PutMapping("/{stock_id}")
-    public ResponseEntity<Stock> updateStock(@PathVariable("stock_id") Long stock_id,@RequestBody Stock stock){
-        stockService.updateStock(stock_id, stock);
-        return new ResponseEntity<>(stockService.getStockById(stock_id), HttpStatus.OK);
+    @PutMapping("/{id}")
+    public ResponseEntity<Stock> updateStock(@PathVariable("id") Long id,@RequestBody Stock stock){
+        stockService.updateStock(id, stock);
+        return new ResponseEntity<>(stockService.getStockById(id), HttpStatus.OK);
     }
 
-    @DeleteMapping("/{stock_id}")
-    public ResponseEntity<Stock> deleteStock(@PathVariable("stock_id") Long stock_id) {
-        stockService.deleteStock(stock_id);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Stock> deleteStock(@PathVariable("id") Long id) {
+        stockService.deleteStock(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
 }

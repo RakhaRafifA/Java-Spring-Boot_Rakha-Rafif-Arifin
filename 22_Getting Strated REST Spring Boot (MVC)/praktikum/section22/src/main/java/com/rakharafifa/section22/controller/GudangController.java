@@ -44,6 +44,7 @@ public class GudangController {
         gudangById.ifPresent(res -> {
             res.setNama(gudang.getNama());
             res.setDescription(gudang.getDescription());
+            gudangRepository.save(res);
         });
         return gudangById;
     }
