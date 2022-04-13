@@ -30,7 +30,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public User register(UsernamePassword req) {
         User user = new User();
-        user.setUsername(req.getUsername());
+        user.setUsername(req.getPhone());
         user.setPassword(passwordEncoder.encode(req.getPassword()));
         return userRepository.save(user);
     }
@@ -39,7 +39,7 @@ public class AuthServiceImpl implements AuthService {
         try {
             Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                    req.getUsername(), 
+                    req.getPhone(), 
                     req.getPassword())
             );
             SecurityContextHolder.getContext().setAuthentication(authentication);

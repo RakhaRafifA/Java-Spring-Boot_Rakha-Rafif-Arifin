@@ -6,6 +6,7 @@ import com.rakharafifa.section27.model.payload.UsernamePassword;
 import com.rakharafifa.section27.service.AuthService;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,5 +31,12 @@ public class AuthController {
     public ResponseEntity<?> getToken(@RequestBody UsernamePassword usernamePassword){
         TokenResponse token = authService.generateToken(usernamePassword);
         return ResponseEntity.ok(token);
+    }
+
+    @GetMapping("/info")
+    public ResponseEntity<?> getPhone(){
+        UsernamePassword phone = new UsernamePassword();
+        phone.getPhone();
+        return ResponseEntity.ok(phone);
     }
 }
