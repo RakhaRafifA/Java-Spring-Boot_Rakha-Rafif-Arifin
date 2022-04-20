@@ -1,5 +1,10 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Java-Spring-Boot_Rakha-Rafif-Arifin/39_CI CD with Microservices/praktikum/section39'
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
